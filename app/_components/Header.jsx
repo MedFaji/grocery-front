@@ -47,8 +47,11 @@ const Header = () => {
           <DropdownMenuContent>
             <DropdownMenuLabel>Browse Category</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {categories.map((category) => (
-              <Link href={`/products-category/${category.attributes?.name}`}>
+            {categories.map((category, index) => (
+              <Link
+                href={`/products-category/${category.attributes?.name}`}
+                key={index}
+              >
                 <DropdownMenuItem
                   key={category?.id}
                   className="flex gap-3 items-center cursor-pointer"
