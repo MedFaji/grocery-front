@@ -15,9 +15,15 @@ const getSliders = () =>
 const getProducts = () =>
   axiosClient.get("/products?populate=*").then((res) => res.data.data);
 
+const getProductByCategory = (categoryName) =>
+  axiosClient
+    .get(`/products?filters[categories][name][$in]=${categoryName}&populate=*`)
+    .then((res) => res.data.data);
+
 export default {
   getCategories,
   getSliders,
   getCategoryList,
   getProducts,
+  getProductByCategory,
 };
