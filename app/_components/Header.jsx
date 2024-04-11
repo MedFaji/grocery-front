@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/sheet";
 import CartItemList from "./CartItemList";
 import { toast } from "sonner";
-import { deleteCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);

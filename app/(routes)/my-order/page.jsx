@@ -10,6 +10,7 @@ import {
 import moment from "moment";
 import Image from "next/image";
 import MyOrderItem from "./_components/MyOrderItem";
+import { getCookie } from "cookies-next";
 
 const MyOrder = () => {
   const jwt = getCookie("jwt");
