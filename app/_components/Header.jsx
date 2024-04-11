@@ -36,7 +36,8 @@ const Header = () => {
   const router = useRouter();
   const [totalCartItems, setTotalCartItems] = useState(0);
   const jwt = getCookie("jwt");
-  const user = JSON.parse(getCookie("user"));
+  const userCookie = getCookie("user");
+  const user = userCookie ? JSON.parse(userCookie) : null;
   const { updateCart, setUpdateCart } = useContext(UpdateCartContext);
   const [cartItemList, setCartItemList] = useState([]);
 

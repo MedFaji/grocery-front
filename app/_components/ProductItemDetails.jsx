@@ -17,7 +17,8 @@ const ProductItemDetails = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const jwt = getCookie("jwt");
   const router = useRouter();
-  const user = JSON.parse(getCookie("user"));
+  const userCookie = getCookie("user");
+  const user = userCookie ? JSON.parse(userCookie) : null;
   const [loading, setLoading] = useState(false);
   const { updateCart, setUpdateCart } = useContext(UpdateCartContext);
 

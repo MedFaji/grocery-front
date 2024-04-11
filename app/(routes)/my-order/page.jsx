@@ -14,7 +14,8 @@ import { getCookie } from "cookies-next";
 
 const MyOrder = () => {
   const jwt = getCookie("jwt");
-  const user = JSON.parse(getCookie("user"));
+  const userCookie = getCookie("user");
+  const user = userCookie ? JSON.parse(userCookie) : null;
   const router = useRouter();
   const [orderList, setOrderList] = useState([]);
 

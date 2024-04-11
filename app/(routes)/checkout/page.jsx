@@ -10,7 +10,8 @@ import { getCookie } from "cookies-next";
 
 const Checkout = () => {
   const jwt = getCookie("jwt");
-  const user = JSON.parse(getCookie("user"));
+  const userCookie = getCookie("user");
+  const user = userCookie ? JSON.parse(userCookie) : null;
   const { updateCart, setUpdateCart } = useContext(UpdateCartContext);
   const [totalCartItems, setTotalCartItems] = useState(0);
   const [cartItemList, setCartItemList] = useState([]);
