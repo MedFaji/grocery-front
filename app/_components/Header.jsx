@@ -31,11 +31,8 @@ import { toast } from "sonner";
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const isLogged =
-    window && window.sessionStorage
-      ? sessionStorage.getItem("jwt")
-        ? true
-        : false
-      : false;
+    sessionStorage && sessionStorage.getItem("jwt") ? true : false;
+
   const router = useRouter();
   const [totalCartItems, setTotalCartItems] = useState(0);
   const jwt = sessionStorage.getItem("jwt");

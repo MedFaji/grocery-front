@@ -4,12 +4,7 @@ import Link from "next/link";
 
 const OrderConfirmation = () => {
   const isLogged =
-    window && window.sessionStorage
-      ? sessionStorage.getItem("jwt")
-        ? true
-        : false
-      : false;
-
+    sessionStorage && sessionStorage.getItem("jwt") ? true : false;
   useEffect(() => {
     if (!isLogged) {
       window.location.href = "/sign-in";
