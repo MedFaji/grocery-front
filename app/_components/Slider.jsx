@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Carousel,
@@ -6,11 +7,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Slider = ({ sliderList }) => {
   return (
     <div>
-      <Carousel>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 8000,
+          }),
+        ]}
+      >
         <CarouselContent>
           {sliderList.map((slider, index) => (
             <CarouselItem key={index}>

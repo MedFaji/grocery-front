@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import PorductItemDetails from "./PorductItemDetails";
+import ProductItemDetails from "./ProductItemDetails";
 
 const ProductItem = ({ product }) => {
   return (
@@ -50,7 +50,7 @@ const ProductItem = ({ product }) => {
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
-              <PorductItemDetails product={product} />
+              <ProductItemDetails product={product} />
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

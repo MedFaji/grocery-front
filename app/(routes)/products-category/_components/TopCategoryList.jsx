@@ -9,10 +9,8 @@ const TopCategoryList = ({ categoryList, selectedCategory }) => {
         <Link
           href={`/products-category/${category.attributes?.name}`}
           key={index}
-          className={
-            "flex flex-col items-center justify-center bg-green-50 outline outline-1 outline-primary rounded-lg p-5 mt-5 gap-2 cursor-pointer group hover:bg-green-200 w-[160px] min-w-[100px] " +
-            (selectedCategory === category.attributes.name && "bg-green-200")
-          }
+          className={`flex flex-col items-center justify-center bg-green-50 outline outline-1 outline-primary rounded-lg p-5 mt-5 gap-2 cursor-pointer group hover:bg-green-200 w-[160px] min-w-[100px] 
+          `}
         >
           <Image
             src={
