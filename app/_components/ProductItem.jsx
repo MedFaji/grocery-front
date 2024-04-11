@@ -14,10 +14,7 @@ const ProductItem = ({ product }) => {
   return (
     <div className="flex flex-col items-center justify-center border rounded-lg p-4 mt-5 gap-3 cursor-pointer group  hover:bg-green-100 ">
       <img
-        src={
-          process.env.NEXT_PUBLIC_API_URL +
-          product.attributes?.images?.data[0]?.attributes?.url
-        }
+        src={product.attributes?.images?.data[0]?.attributes?.url}
         width={500}
         height={200}
         alt={product.attributes.name}

@@ -23,10 +23,7 @@ const Slider = ({ sliderList }) => {
           {sliderList.map((slider, index) => (
             <CarouselItem key={index}>
               <img
-                src={
-                  process.env.NEXT_PUBLIC_API_URL +
-                  slider.attributes?.image?.data?.attributes?.url
-                }
+                src={slider.attributes?.image?.data?.attributes?.url}
                 width={1000}
                 height={500}
                 alt="slider"

@@ -14,10 +14,7 @@ const CategoryList = ({ categoryList }) => {
             className="flex flex-col items-center justify-center bg-green-50 shadow-md rounded-lg p-5 mt-5 gap-2 cursor-pointer group  hover:bg-green-100 "
           >
             <Image
-              src={
-                process.env.NEXT_PUBLIC_API_URL +
-                category.attributes?.icon?.data?.attributes?.url
-              }
+              src={category.attributes?.icon?.data?.attributes?.url}
               width={50}
               height={50}
               alt="category"

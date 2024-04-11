@@ -132,10 +132,7 @@ const Header = () => {
                   className="flex gap-3 items-center cursor-pointer"
                 >
                   <Image
-                    src={
-                      process.env.NEXT_PUBLIC_API_URL +
-                      category?.attributes?.icon?.data.attributes?.url
-                    }
+                    src={category?.attributes?.icon?.data.attributes?.url}
                     width={25}
                     height={25}
                     alt="category-icon"

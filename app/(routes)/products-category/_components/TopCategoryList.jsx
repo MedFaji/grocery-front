@@ -13,10 +13,7 @@ const TopCategoryList = ({ categoryList, selectedCategory }) => {
           `}
         >
           <Image
-            src={
-              process.env.NEXT_PUBLIC_API_URL +
-              category.attributes?.icon?.data?.attributes?.url
-            }
+            src={category.attributes?.icon?.data?.attributes?.url}
             width={50}
             height={50}
             alt="category"

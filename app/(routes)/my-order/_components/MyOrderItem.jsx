@@ -5,10 +5,7 @@ const MyOrderItem = ({ order }) => {
   return (
     <div className="grid grid-cols-5 w-[50%] p-4">
       <Image
-        src={
-          process.env.NEXT_PUBLIC_API_URL +
-          order.product.data.attributes.images.data[0].attributes.url
-        }
+        src={order.product.data.attributes.images.data[0].attributes.url}
         alt="product"
         className="w-20 h-20 bg-gray-100 p-5 rounded-sm border"
         width={80}

@@ -10,7 +10,7 @@ const CartItemList = ({ cartItemList, deleteItem }) => {
         {cartItemList.map((cartItem, index) => (
           <div key={index} className="flex items-center gap-6 p-2  rounded-lg ">
             <Image
-              src={process.env.NEXT_PUBLIC_API_URL + cartItem.image}
+              src={cartItem.image}
               width={70}
               height={70}
               className="rouded-lg object-cover max-w-[70px] max-h-[70px] flex-1"

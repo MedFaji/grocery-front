@@ -54,10 +54,7 @@ const ProductItemDetails = ({ product }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 items-start p-7 bg-white text-black gap-5">
       <Image
-        src={
-          process.env.NEXT_PUBLIC_API_URL +
-          product.attributes?.images?.data[0]?.attributes?.url
-        }
+        src={product.attributes?.images?.data[0]?.attributes?.url}
         width={300}
         height={200}
         alt={product.attributes.name}
