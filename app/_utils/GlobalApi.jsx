@@ -3,7 +3,7 @@ import { create } from "domain";
 const { default: axios } = require("axios");
 
 const axiosClient = axios.create({
-  baseURL: "https://grocery-admin.medevs.tech/",
+  baseURL: "https://grocery-admin.medevs.tech/api",
 });
 
 const getCategories = () => axiosClient.get("/categories?populate=*");
