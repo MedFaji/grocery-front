@@ -27,16 +27,16 @@ import {
 } from "@/components/ui/sheet";
 import CartItemList from "./CartItemList";
 import { toast } from "sonner";
+import { deleteCookie } from "cookies-next";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
-  const isLogged =
-    sessionStorage && sessionStorage.getItem("jwt") ? true : false;
+  const isLogged = getCookie("jwt") ? true : false;
 
   const router = useRouter();
   const [totalCartItems, setTotalCartItems] = useState(0);
-  const jwt = sessionStorage.getItem("jwt");
-  const user = JSON.parse(sessionStorage.getItem("user"));
+  const jwt = getCookie("jwt");
+  const user = JSON.parse(getCookie("user"));
   const { updateCart, setUpdateCart } = useContext(UpdateCartContext);
   const [cartItemList, setCartItemList] = useState([]);
 
@@ -57,7 +57,8 @@ const Header = () => {
   };
 
   const signOut = () => {
-    sessionStorage.clear();
+    deleteCookie("jwt");
+    deleteCookie("user");
     router.push("/sign-in");
   };
 

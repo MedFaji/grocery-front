@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
+import { getCookie } from "cookies-next";
 
 const OrderConfirmation = () => {
-  const isLogged =
-    sessionStorage && sessionStorage.getItem("jwt") ? true : false;
+  const isLogged = getCookie("jwt") ? true : false;
   useEffect(() => {
     if (!isLogged) {
       window.location.href = "/sign-in";

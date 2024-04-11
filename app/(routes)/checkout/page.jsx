@@ -6,14 +6,15 @@ import { useRouter } from "next/navigation";
 import React, { use, useContext, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { LoaderIcon } from "lucide-react";
+import { getCookie } from "cookies-next";
 
 const Checkout = () => {
-  const jwt = sessionStorage.getItem("jwt");
-  const user = JSON.parse(sessionStorage.getItem("user"));
+  const jwt = getCookie("jwt");
+  const user = JSON.parse(getCookie("user"));
   const { updateCart, setUpdateCart } = useContext(UpdateCartContext);
   const [totalCartItems, setTotalCartItems] = useState(0);
   const [cartItemList, setCartItemList] = useState([]);
-  const isLogged = sessionStorage.getItem("jwt") ? true : false;
+  const isLogged = getCookie("jwt") ? true : false;
   const [subTotal, setSubTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();

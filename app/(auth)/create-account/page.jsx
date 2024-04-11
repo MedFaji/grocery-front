@@ -8,6 +8,7 @@ import GlobalApi from "@/app/_utils/GlobalApi";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { LoaderIcon } from "lucide-react";
+import { getCookie, setCookie } from "cookies-next";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
@@ -17,7 +18,7 @@ const CreateAccount = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (sessionStorage.getItem("jwt")) {
+    if (getCookie("jwt")) {
       router.push("/");
     }
   }, []);
@@ -27,8 +28,8 @@ const CreateAccount = () => {
 
     GlobalApi.registerUser(username, email, password)
       .then((res) => {
-        sessionStorage.setItem("user", JSON.stringify(res.data.user));
-        sessionStorage.setItem("jwt", res.data.jwt);
+        setCookie("user", JSON.stringify(res.data.user));
+        setCookie("jwt", res.data.jwt);
         toast.success("Account created successfully");
         router.push("/sign-in");
         setLoading(false);

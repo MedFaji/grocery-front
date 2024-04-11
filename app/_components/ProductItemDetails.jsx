@@ -8,15 +8,16 @@ import GlobalApi from "../_utils/GlobalApi";
 import { toast } from "sonner";
 import { LoaderIcon } from "lucide-react";
 import { UpdateCartContext } from "../_context/UpdateCartContext";
+import { getCookie } from "cookies-next";
 
 const ProductItemDetails = ({ product }) => {
   const [total, setTotal] = useState(
     product.attributes?.sellingPrice || product.attributes?.mrp
   );
   const [quantity, setQuantity] = useState(1);
-  const jwt = sessionStorage.getItem("jwt");
+  const jwt = getCookie("jwt");
   const router = useRouter();
-  const user = JSON.parse(sessionStorage.getItem("user"));
+  const user = JSON.parse(getCookie("user"));
   const [loading, setLoading] = useState(false);
   const { updateCart, setUpdateCart } = useContext(UpdateCartContext);
 

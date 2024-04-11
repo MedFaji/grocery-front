@@ -8,6 +8,7 @@ import GlobalApi from "@/app/_utils/GlobalApi";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { LoaderIcon } from "lucide-react";
+import { getCookie, setCookie } from "cookies-next";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const SignIn = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (sessionStorage.getItem("jwt")) {
+    if (getCookie("jwt")) {
       router.push("/");
     }
   }, []);
@@ -27,8 +28,8 @@ const SignIn = () => {
       .then((response) => {
         if (response.data.user) {
           toast.success("Sign In Successfully");
-          sessionStorage.setItem("user", JSON.stringify(response.data.user));
-          sessionStorage.setItem("jwt", response.data.jwt);
+          setCookie("user", JSON.stringify(response.data.user));
+          setCookie("jwt", response.data.jwt);
           router.push("/");
           setLoading(false);
         } else {
